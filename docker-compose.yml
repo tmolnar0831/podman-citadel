@@ -1,0 +1,15 @@
+---
+services:
+  citadel:
+    networks:
+      - n_citadel
+    volumes:
+      - ./citadel-data:/citadel-data
+    ports:
+      - 8000:80
+    container_name: citadel
+    image: docker.io/citadeldotorg/citadel
+networks:
+  n_citadel:
+    external:
+      name: n_citadel
